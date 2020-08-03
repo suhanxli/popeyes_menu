@@ -5,4 +5,162 @@
 
 * {
   box-sizing: border-box;
+  font-family: chicken_sans_bold, sans-serif;
+}
+body {
+  margin: 0;
+  background-color: #f4f1ef;
+}
+
+header {
+  display: grid;
+  grid-template-rows: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  grid-row-start: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0 5rem;
+  height: 4rem;
+  position: fixed;
+  /*for all the items inside the nav bar*/
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+h1 {
+  background-color: #ff7d08;
+  color: white;
+  margin: 0;
+  padding: 3rem;
+  grid-row-start: 2;
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 4rem;
+}
+
+nav span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+span#order {
+  grid-column: 1 / span 1;
+}
+
+span#restaurants {
+  grid-column: 2 / span 1;
+}
+
+span#offers {
+  grid-column: 3 / span 1;
+}
+
+span#more-dropdown {
+  grid-column: 4 / span 1;
+  position: relative;
+}
+
+span#logo {
+  grid-column: 6 / span 2;
+}
+
+span#signup {
+  grid-column: 10 / span 2;
+  border-radius: 50vh;
+  background-color: #be5b0b;
+  color: white;
+  margin: 1rem 1rem;
+}
+
+span#checkout {
+  grid-column: 12 / span 1;
+  border-radius: 50vh;
+  border: 1px solid #be5b0b;
+  margin: 1rem 0.5rem;
+  color: #be5b0b;
+}
+
+span#checkout:hover {
+  filter: invert();
+}
+
+img.checkout-icon {
+  height: 1rem;
+  margin: 0 0.5rem 0 0;
+}
+
+p.introduction {
+  grid-row-start: 3;
+  margin: 0;
+  padding: 3rem 12rem;
+  background-color: #f4f1ef;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+main {
+  max-width: 100rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  padding: 0 5rem 5rem 5rem;
+}
+
+section {
+  background-color: white;
+  display: grid;
+  place-items: left;
+  padding: 0;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+img.food {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+img.logo {
+  max-height: 1.5rem;
+  display: inline-block;
+}
+
+h3 {
+  text-align: left;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+h4 {
+  text-align: left;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  color: darkorange;
+}
+
+footer {
+  height: 15rem;
+  background-color: black;
+  padding: 2rem 5rem;
+  color: white;
+}
+
+footer a {
+  color: white;
 }
