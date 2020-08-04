@@ -34,6 +34,13 @@ nav {
   /*for all the items inside the nav bar*/
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  /* IF USING 3 DIVS AND WANT THEM IN A LINE, SPACED EVENLY.
+  display: flex;
+  justify-content: space-between
+  */
+  /*MIDDLE item may not be centered, can make left and right divs equal width, 
+  and then use padding/margin to get them to align left and right.
+  Can also use position: absolute for central div*/
 }
 
 h1 {
@@ -163,4 +170,23 @@ footer {
 
 footer a {
   color: white;
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: repeat(4, 260px);
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  p.introduction {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 }
