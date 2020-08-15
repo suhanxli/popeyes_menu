@@ -1,0 +1,14 @@
+{
+  "name": "popeyes_static_menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:sli1-rbi/popeyes_menu.git",
+  "author": "<sli1@rbi.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
