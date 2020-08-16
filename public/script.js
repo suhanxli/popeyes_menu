@@ -3,7 +3,6 @@ if (!localStorage.getItem('userId')) {
 }
 
 async function handleClick(event) {
-  console.log(event);
   const pageX = Math.round(event.pageX);
   const pageY = Math.round(event.pageY);
   const path1stDataItem = event.path.find((item) => ("trackingid" in item.dataset));
