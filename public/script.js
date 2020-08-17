@@ -20,7 +20,14 @@ async function handleClick(event) {
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
-    body: JSON.stringify({body}),
+    body: JSON.stringify({body
+      // pageX: body.pageX,
+      // pageY: body.pageY,
+      // trackingId: body.trackingId,
+      // textClicked: body.textClicked,
+      // timeOnPage: body.timeOnPage,
+      // userId: body.userId,
+    }),
   });
 }
 

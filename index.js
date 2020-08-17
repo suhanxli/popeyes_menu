@@ -9,11 +9,12 @@ const db = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 const PORT = process.env.PORT || 3000;
 
 app.post('/clicks', async function(request, response) {
-  console.log(request.body);
+  const {body} = request.body;
+  console.log([body.pageX, body.pageY, body.trackingId, body.textClicked, body.timeOnPage, body.userId]);
   const result = await db.query(`
       INSERT INTO clicks (pagex, pagey, trackingid, textclicked, timeonpage, userid)
       VALUES ($1, $2, $3, $4, $5, $6)
-      RETURNING *;`, [request.body.pageX, request.body.pageY, request.body.trackingId, request.body.textClicked, request.body.timeOnPage, request.body.userId]
+      RETURNING *;`, [body.pageX, body.pageY, body.trackingId, body.textClicked, body.timeOnPage, body.userId]
       );
   response.json(result.rows[0]);
   response.status(406).json({ error: 'click NOT tracked' });
@@ -26,7 +27,7 @@ db.query(`
     trackingId VARCHAR(128) NOT NULL,
     pageX INTEGER NOT NULL,
     pageY INTEGER NOT NULL,
-    textClicked VARCHAR(128),
+    textClicked VARCHAR(512),
     timeOnPage INTEGER NOT NULL
   );
 `);
