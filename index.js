@@ -17,7 +17,6 @@ app.post('/clicks', async function(request, response) {
       RETURNING *;`, [body.pageX, body.pageY, body.trackingId, body.textClicked, body.timeOnPage, body.userId]
       );
   response.json(result.rows[0]);
-  response.status(406).json({ error: 'click NOT tracked' });
 });
 
 db.query(`
